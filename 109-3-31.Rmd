@@ -1,0 +1,73 @@
+---
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+```{r}
+vectorexample <- c("2","6","7")
+listexample <- list(2,6,8)
+print(vectorexample)
+print(listexample)
+```
+```{r}
+library(lubridate)
+`小明交易1` <- list(ymd_hms("2020-3-31T13:40:55Z"),"一芳",2,"水果茶")
+print(`小明交易1`)
+```
+```{r}
+`小明課表A` <- list(c("108-1","高等會計學","高等統計學"),c("108-2","食在拉丁美洲"))
+print(`小明課表A`)
+```
+```{r}
+`小明課表B` <- list(list("108-1","高等會計學","高等統計學"),list("108-2","食在拉丁美洲"))
+print(`小明課表B`)
+```
+```{r}
+`小明課表C` <- list(`108學年第1學期`=list(c("108-1"),c("高等會計學","高等統計學")),`108學年第2學期`=list(c("108-2"),c("食在拉丁美洲")))
+print(`小明課表C`)
+```
+```{r}
+commit <- list(author=list(name="martin老師",email="mtiln@gm.nypu.edu.tw",time=ymd_hms("2020-3-25T07:17:40Z")),
+  committer=list(name="emilyluckey",email="emily007@gmail.com",time=ymd_hms("2020-03-26T08:18:40Z")),
+  message="update")
+print(commit)
+```
+```{r}
+author <- c("Martin老師", "mtlin@gm.ntpu.edu.tw", "2020-03-25T07:17:40Z")
+
+committer <- c("emilyluckey", "emily007@gmail.com", "2020-03-26T08:18:40Z")
+
+message <- c("update")
+print(author)
+```
+```{r}
+c("2020-3-31T13:40:55Z",
+  "一芳",
+  "2",
+  "水果茶")
+```
+```{r}
+save(commit,listexample,`小明課表C`,file="109-3-31.rda")
+```
+
